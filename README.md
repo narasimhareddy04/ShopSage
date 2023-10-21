@@ -1,8 +1,8 @@
-# [your app name here]
+# ShopSage
 
 CodePath WEB103 Final Project
 
-Designed and developed by: [your names here]
+Designed and developed by: Mohana Narasimha Reddy Attunuru, Subash Neupane
 
 🔗 Link to deployed app:
 
@@ -18,9 +18,9 @@ Designed and developed by: [your names here]
 
 ## Tech Stack
 
-Frontend:
+Frontend: React JS
 
-Backend:
+Backend: NodeJS, Express, Postgres DB
 
 ## Features
 
