@@ -18,9 +18,9 @@ Designed and developed by: Mohana Narasimha Reddy Attunuru, Subash Neupane
 
 ## Tech Stack
 
-Frontend: React JS
+Frontend: React JS, Redux, TailwindCSS
 
-Backend: NodeJS, Express, Postgres DB
+Backend: Node JS, Express, Postgres DB
 
 ## Features
 
