@@ -4,8 +4,6 @@ Reference the Writing User Stories final project guide in the course portal for 
 
 ## Outline User Roles
 
-[👉🏾👉🏾👉🏾 Include at least at least 1, but no more than 3, user roles.]
-
 1. Guest/User:
   Access: Can browse products, read descriptions, view images, and access public content.
   Functionalities: Search for products, filter product listings, read reviews. Cannot make purchases without registering.
@@ -19,8 +17,6 @@ Reference the Writing User Stories final project guide in the course portal for 
   Functionalities: List new products, update product details, manage inventory, set promotional prices, respond to customer reviews.
 
 ## Draft User Stories
-
-[👉🏾👉🏾👉🏾 Include at least at least 10 user stories in this format:]
 
 1. As a new user, I want to easily register for an account on ShopSage, so that I can have a personalized shopping experience and track my orders.
 
