@@ -1,6 +1,6 @@
 const Cart = () => {
   return (
-    <div>
+    <div className="flex justify-center items-center">
       <h1>Cart</h1>
     </div>
   );
