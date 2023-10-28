@@ -2,6 +2,8 @@ import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 import { FaShoppingCart } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
+import { FaHome } from "react-icons/fa";
+
 const Navbar = () => {
   return (
     <div>
@@ -27,7 +29,8 @@ const Navbar = () => {
         </div>
         <div className=" flex flex-col sm:bg-green-900 sm:rounded-lg sm:p-2 sm:flex-row sm:justify-center sm:items-center items-center font-medium text-slate-100 mr-5 space-x-6 ">
           <NavLink to="/">
-            <p className="text-slate-100">Home</p>
+            {/* <p className="text-slate-100">Home</p> */}
+            <FaHome className="text-2xl text-slate-100" />
           </NavLink>
           <NavLink to="/cart">
             <div className="relative">
