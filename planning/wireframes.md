@@ -19,6 +19,7 @@ Shopping Cart Page
 
 ## Wireframe 3: Shopping Cart Page
 
-[👉🏾👉🏾👉🏾 include wireframe 3]
+<img width="1776" alt="ShopSage - Shopping Cart" src="https://github.com/narasimhareddy04/ShopSage/assets/63772959/db1db9d9-df85-4eae-9ffe-14c0b62e11f8">
+
 
 [👉🏾👉🏾👉🏾 include more wireframes as desired]
