@@ -4,14 +4,8 @@ Reference the Creating an Entity Relationship Diagram final project guide in the
 
 ## Create the List of Tables
 
-[👉🏾👉🏾👉🏾 List each table in your diagram]
+Users, Carts, Reviews, Products, Categories, Cart_Products
 
 ## Add the Entity Relationship Diagram
 
-[👉🏾👉🏾👉🏾 Include an image or images of the diagram below. You may also wish to use the following markdown syntax to outline each table, as per your preference.]
-
-| Column Name | Type | Description |
-|-------------|------|-------------|
-| id | integer | primary key |
-| name | text | name of the shoe model |
-| ... | ... | ... |
+![ShopSage ERD](https://github.com/narasimhareddy04/ShopSage/assets/63772959/ffcbfd1c-e488-4362-9991-a8ad373bc614)
