@@ -5,7 +5,6 @@ const Carousel = () => {
   const images = [
     "https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/ecommerce-products-laptops-bg.png",
     "https://d1tgh8fmlzexmh.cloudfront.net/ccbp-responsive-website/ecommerce-products-headphones-bg.png",
-
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnUMT998HrHPHLi8DKgIEOxIQFqv6M_hKUUQ&usqp=CAU",
   ];
 
