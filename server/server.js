@@ -1,28 +1,23 @@
-import express from "express";
-import path from "path";
+import express from 'express'
+import path from 'path'
 
-import cors from "cors";
-import dotenv from "dotenv";
+import cors from 'cors'
+import dotenv from 'dotenv'
+import userRoutes from './route/Userauthroute.js'
+import productRoutes from './route/Productroute.js'
 
-// import the router from your routes file
+dotenv.config()
 
-dotenv.config();
+const PORT = process.env.PGPORT
 
-const PORT = process.env.PORT || 3001;
+const app = express()
 
-const app = express();
-
-app.use(express.json());
-app.use(cors());
-app.get("/", (req, res) => {
-  res
-    .status(200)
-    .send(
-      '<h1 style="text-align: center; margin-top: 50px;">✈️ ShopSage API</h1>'
-    );
-});
+app.use(express.json())
+app.use(cors())
+app.use('/api/v2/users', userRoutes)
+app.use('/api/v2/product', productRoutes)
 // specify the api path for the server to use
 
 app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
-});
+  console.log(`🚀 Server running on http://localhost:${PORT}`)
+})
