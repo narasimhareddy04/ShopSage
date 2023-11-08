@@ -3,9 +3,9 @@ import { pool } from '../config/database.js'
 // Create Product and Product Details
 export const createProductAndDetails = async (req, res) => {
   try {
+    console.log(req.body)
     const {
       image,
-      accessories,
       title,
       price,
       review,
@@ -18,8 +18,8 @@ export const createProductAndDetails = async (req, res) => {
     } = req.body
 
     const createProductQuery = `
-      INSERT INTO products (image, accessories, title, price, review)
-      VALUES ($1, $2, $3, $4, $5)
+      INSERT INTO products (image, title, price, review)
+      VALUES ($1,  $2, $3, $4)
       RETURNING id`
 
     const createProductDetailsQuery = `
@@ -29,7 +29,7 @@ export const createProductAndDetails = async (req, res) => {
     const client = await pool.connect()
     try {
       // Insert product data and get the product ID
-      const productData = [image, accessories, title, price, review]
+      const productData = [image, title, price, review]
       const productResult = await client.query(createProductQuery, productData)
       const productid = productResult.rows[0].id
       console.log(productid)
@@ -64,12 +64,48 @@ export const createProductAndDetails = async (req, res) => {
 // Get All Products
 export const getAllProducts = async (req, res) => {
   try {
+    const queryValue = req.query.category
     const getAllProductsQuery = 'SELECT * FROM products'
-    const { rows } = await pool.query(getAllProductsQuery)
+    if (queryValue) {
+      getAllProductsQuery += `WHERE category = $1`
+    }
+
+    const { rows } = await pool.query(getAllProductsQuery, [queryValue])
     console.log(rows)
-    res.status(200).json(rows)
+    return res.status(200).json(rows)
   } catch (error) {
     console.error('Error getting products:', error)
+    res.status(500).json({ error: 'Internal server error' })
+  }
+}
+
+// get product details
+
+// Get Product Details with Image from Product by Product ID using RIGHT JOIN
+export const getProductDetailsById = async (req, res) => {
+  const productId = parseInt(req.params.id)
+
+  try {
+    const getProductDetailsQuery = `
+        SELECT product_details.*, products.image
+        FROM product_details
+        RIGHT JOIN products 
+        ON product_details.product_id = products.id
+        WHERE product_details.product_id = $1
+      `
+
+    const { rows } = await pool.query(getProductDetailsQuery, [productId])
+    console.log(rows)
+    if (rows.length > 0) {
+      res.status(200).json(rows[0]) // Assuming one product has one set of details
+    } else {
+      res.status(404).json({ message: 'Product details not found' })
+    }
+  } catch (error) {
+    console.error(
+      'Error getting product details with image using RIGHT JOIN:',
+      error,
+    )
     res.status(500).json({ error: 'Internal server error' })
   }
 }
@@ -78,7 +114,7 @@ export const getAllProducts = async (req, res) => {
 export const updateProduct = async (req, res) => {
   try {
     const productId = parseInt(req.params.id)
-    const { image, accessories, title, price, review } = req.body
+    const { image, title, price, review } = req.body
     const updateProductQuery = `
       UPDATE products
       SET image = $1, accessories = $2, title = $3, price = $4, review = $5
@@ -86,7 +122,7 @@ export const updateProduct = async (req, res) => {
 
     await pool.query(updateProductQuery, [
       image,
-      accessories,
+
       title,
       price,
       review,
