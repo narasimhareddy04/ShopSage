@@ -8,9 +8,12 @@ import {
   createProductDetailsTable,
   createProductsTable,
 } from '../Model/ProductModel.js'
+import createCartTable from '../Model/AddCartModel.js'
+
 createTable()
 createUserDetailsTable()
 createComment()
 
 createProductsTable()
 createProductDetailsTable()
+createCartTable()
